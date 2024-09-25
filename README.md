@@ -5,11 +5,11 @@
 1. Prerequisites:
 
 - Clone this repository.
-- Install [Docker](https://www.docker.com/) on your machine if do not have it already.
+- Install [Docker](https://www.docker.com/) on your machine if you do not have it already.
 
 2. Build Docker Image:
 
-- Navigate to the root directory of the repo where the `Dockerfile` and this `README.md` are located.
+- Navigate to the root directory of this repo where the `Dockerfile` and this `README.md` are located.
 - Run the following command to build the Docker image:
 
 ```
