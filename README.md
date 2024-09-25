@@ -1,6 +1,6 @@
 # Fetch Rewards Receipt Processor
 
-## Setup and running instructions
+## Setup
 
 1. Prerequisites:
 
