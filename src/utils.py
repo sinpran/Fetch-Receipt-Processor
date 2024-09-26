@@ -1,7 +1,8 @@
 import math
+from typing import Dict, Any
 
 
-def get_points_for_retailer_name(receipt) -> int:
+def get_points_for_retailer_name(receipt: Dict[Any, Any]) -> int:
     """
     Calculates points based on the alphanumeric characters in the retailer's name from the receipt.
 
@@ -26,7 +27,7 @@ def get_points_for_retailer_name(receipt) -> int:
     return points
 
 
-def get_purchase_day_points(receipt) -> int:
+def get_purchase_day_points(receipt: Dict[Any, Any]) -> int:
     """
     Awards points based on the purchase day.
 
@@ -50,7 +51,7 @@ def get_purchase_day_points(receipt) -> int:
     return points
 
 
-def get_purchase_hour_points(receipt) -> int:
+def get_purchase_hour_points(receipt: Dict[Any, Any]) -> int:
     """
     Awards 10 points if the purchase time is after 2:00pm and before 4:00pm, otherwise returns 0.
 
@@ -75,7 +76,7 @@ def get_purchase_hour_points(receipt) -> int:
     return points
 
 
-def is_total_multiple_points(receipt) -> int:
+def is_total_multiple_points(receipt: Dict[Any, Any]) -> int:
     """
     Awards 25 points if the total amount in the receipt is a multiple of 0.25.
 
@@ -98,7 +99,7 @@ def is_total_multiple_points(receipt) -> int:
     return points
 
 
-def is_total_round_dollar_amount_points(receipt) -> int:
+def is_total_round_dollar_amount_points(receipt: Dict[Any, Any]) -> int:
     """
     Awards 50 points if the total amount in the receipt is a round dollar amount with no cents.
 
@@ -122,7 +123,7 @@ def is_total_round_dollar_amount_points(receipt) -> int:
     return points
 
 
-def get_points_for_items_in_receipt(receipt) -> int:
+def get_points_for_items_in_receipt(receipt: Dict[Any, Any]) -> int:
     """
     Calculates and returns the total points earned based on the number of items on the receipt.
     Points are awarded at a rate of 5 points for every pair of items.
@@ -145,7 +146,7 @@ def get_points_for_items_in_receipt(receipt) -> int:
     return points
 
 
-def trimmed_length_item_description_points(receipt) -> int:
+def trimmed_length_item_description_points(receipt: Dict[Any, Any]) -> int:
     """
     Calculates points based on item descriptions and prices.
 
@@ -179,7 +180,7 @@ def trimmed_length_item_description_points(receipt) -> int:
     return points
 
 
-def get_total_receipt_points(receipt) -> int:
+def get_total_receipt_points(receipt: Dict[Any, Any]) -> int:
     """
     Calculate the total points awarded for a given receipt based on defined criteria.
 
