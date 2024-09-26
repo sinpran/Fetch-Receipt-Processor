@@ -8,12 +8,12 @@ def get_points_for_retailer_name(receipt: Dict[Any, Any]) -> int:
 
     Each alphanumeric character in the retailer's name awards one point.
 
-    Parameters:
-    receipt (dict): A dictionary containing the retailer's name with the key "retailer",
+    Args:
+        receipt (dict): A dictionary containing the retailer's name with the key "retailer",
                     where the value is a string.
 
     Returns:
-    int: The total points calculated based on the alphanumeric characters in the retailer's name.
+        int: The total points calculated based on the alphanumeric characters in the retailer's name.
     """
     points = 0
     retailer_name = receipt.get("retailer")
@@ -31,12 +31,12 @@ def get_purchase_day_points(receipt: Dict[Any, Any]) -> int:
     """
     Awards points based on the purchase day.
 
-    Parameters:
-    receipt (dict): A dictionary containing the purchase date with the key "purchaseDate"
+    Args:
+        receipt (dict): A dictionary containing the purchase date with the key "purchaseDate"
                     in the format "YYYY-MM-DD".
 
     Returns:
-    int: 6 if the purchase day is odd, 0 otherwise.
+        int: 6 if the purchase day is odd, 0 otherwise.
     """
 
     points = 0
@@ -55,11 +55,11 @@ def get_purchase_hour_points(receipt: Dict[Any, Any]) -> int:
     """
     Awards 10 points if the purchase time is after 2:00pm and before 4:00pm, otherwise returns 0.
 
-    Parameters:
-    receipt (dict): A dictionary containing the time of purchase with the key "purchaseTime",
+    Args:
+        receipt (dict): A dictionary containing the time of purchase with the key "purchaseTime",
                     formatted as "HH:mm".
     Returns:
-    int: 10 if the purchase time is within the specified range, 0 otherwise.
+        int: 10 if the purchase time is within the specified range, 0 otherwise.
     """
 
     points = 0
@@ -80,12 +80,12 @@ def is_total_multiple_points(receipt: Dict[Any, Any]) -> int:
     """
     Awards 25 points if the total amount in the receipt is a multiple of 0.25.
 
-    Parameters:
-    receipt (dict): A dictionary containing the total amount with the key "total",
+    Args:
+        receipt (dict): A dictionary containing the total amount with the key "total",
                     where the value is a string.
 
     Returns:
-    int: 25 if the total is a multiple of 0.25, 0 otherwise.
+        int: 25 if the total is a multiple of 0.25, 0 otherwise.
     """
     points = 0
     total_str = receipt.get("total")
@@ -103,12 +103,12 @@ def is_total_round_dollar_amount_points(receipt: Dict[Any, Any]) -> int:
     """
     Awards 50 points if the total amount in the receipt is a round dollar amount with no cents.
 
-    Parameters:
-    receipt (dict): A dictionary containing the total amount with the key "total",
+    Args:
+        receipt (dict): A dictionary containing the total amount with the key "total",
                     where the value is a string representing a floating-point number.
 
     Returns:
-    int: 50 if the total amount meets the specified condition, 0 otherwise.
+        int: 50 if the total amount meets the specified condition, 0 otherwise.
     """
 
     points = 0
@@ -128,11 +128,11 @@ def get_points_for_items_in_receipt(receipt: Dict[Any, Any]) -> int:
     Calculates and returns the total points earned based on the number of items on the receipt.
     Points are awarded at a rate of 5 points for every pair of items.
 
-    Parameters:
-    receipt (dict): A dictionary containing a list of items under the key "items".
+    Args:
+        receipt (dict): A dictionary containing a list of items under the key "items".
 
     Returns:
-    int: The total points earned based on given criteria.
+        int: The total points earned based on given criteria.
     """
 
     points = 0
@@ -154,13 +154,13 @@ def trimmed_length_item_description_points(receipt: Dict[Any, Any]) -> int:
     the points earned are the item's price multiplied by 0.2,
     rounded up to the nearest integer.
 
-    Parameters:
-    receipt (dict): A dictionary containing a list of items with the key "items",
+    Args:
+        receipt (dict): A dictionary containing a list of items with the key "items",
                     where each item is a dictionary with a "shortDescription" (str)
                     and a "price" (str) key.
 
     Returns:
-    int: The total points earned based on given criteria.
+        int: The total points earned based on given criteria.
     """
 
     points = 0
@@ -187,12 +187,12 @@ def get_total_receipt_points(receipt: Dict[Any, Any]) -> int:
     The function aggregates points from various criteria including retailer name,
     purchase date and time, total amount, and item descriptions among others.
 
-    Parameters:
-    receipt (dict): A dictionary with keys such as 'retailer', 'purchaseDate',
+    Args:
+        receipt (dict): A dictionary with keys such as 'retailer', 'purchaseDate',
                     'purchaseTime', 'total', and 'items'.
 
     Returns:
-    int: The total points awarded for the receipt.
+        int: The total points awarded for the receipt.
     """
     points = 0
 

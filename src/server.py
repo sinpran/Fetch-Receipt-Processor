@@ -9,6 +9,15 @@ RECEIPT_TRACKER: Dict[str, str] = {}
 
 @app.route("/receipts/<id>/points", methods=["GET"])
 def getPoints(id: str) -> Dict[str, int]:
+    """
+    Endpoint to get the total number of points based on the id of a receipt.
+
+    Args:
+        id (str): string id of the receipt that was processed.
+    
+    Returns:
+        dict (str, int): response containing the number of points of the receipt. 
+    """
     try:
         points = RECEIPT_TRACKER.get(id, 0)
         if not points:
@@ -20,6 +29,15 @@ def getPoints(id: str) -> Dict[str, int]:
 
 @app.route("/receipts/process", methods=["POST"])
 def processReceipts() -> Dict[str, str]:
+    """
+    Endpoint to process a receipt given as part of the request body.
+
+    Args:
+        None.
+    
+    Returns:
+        dict (str, str): response containing the id of the processed receipt.
+    """
     try:
         receipt = request.get_json()
         receipt_id = str(uuid.uuid4())
